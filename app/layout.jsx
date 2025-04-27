@@ -6,7 +6,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
-    </html>
+  <head>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icon-192.png" />
+    <meta name="theme-color" content="#ffe4e6" />
+  </head>
+  <body>{children}</body>
+</html>
   );
 }
