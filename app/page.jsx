@@ -1,4 +1,3 @@
-
 'use client';
 import { useState } from "react";
 import { Button } from "../components/ui/button";
@@ -40,7 +39,7 @@ const challenges = [
 
 export default function Page() {
   const [index, setIndex] = useState(0);
-  const [completed, setCompleted] = useState<number[]>([]);
+  const [completed, setCompleted] = useState([]);
 
   const nextChallenge = () => setIndex((index + 1) % challenges.length);
   const toggleComplete = () => {
@@ -54,16 +53,15 @@ export default function Page() {
       <h1 className="text-3xl font-bold mb-4 flex items-center gap-2">
         <Flame className="text-red-500" /> The Daily Flame
       </h1>
-
       <Card>
-        <CardContent className="p-6 text-center text-lg">{challenges[index]}</CardContent>
+        <CardContent className="p-6 text-center text-lg">
+          {challenges[index]}
+        </CardContent>
       </Card>
-
       <div className="flex gap-4 mt-6">
         <Button onClick={toggleComplete}>Mark Complete</Button>
         <Button onClick={nextChallenge}>Next Challenge</Button>
       </div>
-
       <div className="mt-4 text-sm text-gray-500">
         Completed: {completed.length} / {challenges.length}
       </div>
